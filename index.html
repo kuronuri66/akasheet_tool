@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>赤シートツール</title>
+<meta name="description" content="画像から特定の色を削除するツールです">
+
+<link rel="stylesheet" href="style.css">
+
+
+<body bgcolor="#ffffff">
+	<h1>赤シートツール</h1>
+	<p>画像から黒色だけを抽出するツールです</p>
+	
+	<input id="beforeImgInput" type="file" accept="image/*"　/>
+	<div id="canvases">
+		<canvas id="beforeCanvas"></canvas>
+		<canvas id="afterCanvas"></canvas>
+	</div>
+
+	<details id="setting">
+		<summary>設定</summary>
+		R<input type="range" id="R_Range" min="0" max="255"/><span id="R_Span"></span>
+		G<input type="range" id="G_Range" min="0" max="255"/><span id="G_Span"></span>
+		B<input type="range" id="B_Range" min="0" max="255"/><span id="B_Span"></span>
+	</details>
+
+	<p id="sns">
+		<span>SNS等</span>
+		<a href="https://x.com/jo6666_sh" target="_blank">twitter(x)</a>
+		<a href="https://github.com/kuronuri66/akasheet_tool" target="_blank">github</a>
+
+	</p>
+
+
+    <script src="main.js"></script>
+</body>

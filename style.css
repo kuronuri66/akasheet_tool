@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "cins";
+    src : url("c-in-s.ttf") format("truetype");
+}
+
+body {
+	canvas {
+		max-width: 60vw;
+		max-height: 60vh;
+	}
+
+	#canvases{
+		display: flex;
+	}
+
+	#setting {
+		display: none;
+	}
+
+	#sns {
+		position: absolute;
+		right:1vw;
+		top: 0;
+	}
+}
