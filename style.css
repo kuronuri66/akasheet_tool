@@ -4,17 +4,33 @@
 }
 
 body {
+	#header {
+		display: flex;
+		align-items: flex-end;
+		h1 {
+			margin: 1vh
+		}
+	}
+
 	canvas {
-		max-width: 60vw;
+		max-width: 45vw;
 		max-height: 60vh;
 	}
+
 
 	#canvases{
 		display: flex;
 	}
 
+	.Ranges {
+		width: 50vw;
+	}
+
 	#setting {
 		display: none;
+		p{
+			margin:1vh;
+		}
 	}
 
 	#sns {

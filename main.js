@@ -13,9 +13,14 @@ let imgWidth
 let imgHeight
 let beforeImgData
 let afterImgData
+
+let aftercolor = false;
+let whitemore = false;
 let R_Th = 60;
 let G_Th = 60;
 let B_Th = 60;
+
+
 
 qs("#beforeImgInput").addEventListener('change', (e)=>{
 	const imgfile = e.target.files[0];
@@ -49,10 +54,16 @@ function change(){
 		let r = beforeImgData.data[i*4];
 		let g = beforeImgData.data[i*4+1];
 		let b = beforeImgData.data[i*4+2];
-		if(r<R_Th && g<G_Th && b<B_Th){
-			afterImgData.data[i*4] = 0;
-			afterImgData.data[i*4+1] = 0;
-			afterImgData.data[i*4+2] = 0;
+		if((r<R_Th && g<G_Th && b<B_Th && !whitemore)||(r>R_Th && g>G_Th && b>B_Th && whitemore)){
+			if(aftercolor){
+				afterImgData.data[i*4] = r;
+				afterImgData.data[i*4+1] = g;
+				afterImgData.data[i*4+2] = b;
+			}else{
+				afterImgData.data[i*4] = 0;
+				afterImgData.data[i*4+1] = 0;
+				afterImgData.data[i*4+2] = 0;
+			}
 		}else{
 			afterImgData.data[i*4] = 255;
 			afterImgData.data[i*4+1] = 255;
@@ -81,5 +92,25 @@ qs("#B_Range").addEventListener('change', ()=>{
 	qs("#B_Span").innerHTML = qs("#B_Range").value;
 	B_Th = qs("#B_Range").value;
 	beforeImgData = BCTX.getImageData(0,0,imgWidth,imgHeight);
+	change()
+});
+
+qs("#aftercolor").addEventListener('input', ()=>{
+	if (qs("#aftercolor").checked) {
+		aftercolor = true;
+  	} else {
+		aftercolor = false;
+  	}
+	change()
+});
+
+qs("#whitemore").addEventListener('input', ()=>{
+	console.log("checked");
+	if (qs("#whitemore").checked) {
+		whitemore = true;
+  	} else {
+		whitemore = false;
+  	}
+	console.log(whitemore);
 	change()
 });

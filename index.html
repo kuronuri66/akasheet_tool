@@ -6,27 +6,38 @@
 
 
 <body bgcolor="#ffffff">
-	<h1>赤シートツール</h1>
-	<p>画像から黒色だけを抽出するツールです</p>
+	<div id="header">
+		<h1>赤シートツール</h1>
+		<span>画像から黒色だけを抽出するツールです</span>
+	</div>
 	
 	<input id="beforeImgInput" type="file" accept="image/*"　/>
+
+	<details id="setting">
+		<summary>設定</summary>
+		<p>
+			<label>
+				<input type="checkbox" id="aftercolor"/>色を残す
+			</label>
+			<label>
+				<input type="checkbox" id="whitemore"/>白側を残す
+			</label>
+		</p>
+
+		<p>R<input type="range" id="R_Range" class="Ranges" min="0" max="255"/><span id="R_Span"></span></p>
+		<p>G<input type="range" id="G_Range" class="Ranges" min="0" max="255"/><span id="G_Span"></span></p>
+		<p>B<input type="range" id="B_Range" class="Ranges" min="0" max="255"/><span id="B_Span"></span></p>
+	</details>
+
 	<div id="canvases">
 		<canvas id="beforeCanvas"></canvas>
 		<canvas id="afterCanvas"></canvas>
 	</div>
 
-	<details id="setting">
-		<summary>設定</summary>
-		R<input type="range" id="R_Range" min="0" max="255"/><span id="R_Span"></span>
-		G<input type="range" id="G_Range" min="0" max="255"/><span id="G_Span"></span>
-		B<input type="range" id="B_Range" min="0" max="255"/><span id="B_Span"></span>
-	</details>
-
 	<p id="sns">
 		<span>SNS等</span>
 		<a href="https://x.com/jo6666_sh" target="_blank">twitter(x)</a>
 		<a href="https://github.com/kuronuri66/akasheet_tool" target="_blank">github</a>
-
 	</p>
 
 
