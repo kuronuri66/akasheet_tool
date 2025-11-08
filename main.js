@@ -114,3 +114,10 @@ qs("#whitemore").addEventListener('input', ()=>{
 	console.log(whitemore);
 	change()
 });
+
+function download(){
+	let link = document.createElement("a");
+	link.href = qs("#afterCanvas").toDataURL("image/png");
+	link.download = "test.png";
+	link.click();
+}
